@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+class Contacts extends Component {
+  render() {
+  /*  const people = [{
+      name: 'rajan'
+    },
+    {
+      name: 'samit'
+    },
+    {
+      name: 'vivek'
+    }]*/
+    //dynamic pass
+    let people = this.props.contacts;
+
+    return (<ol>
+        {people.map(person => (<li key={person.name}>{person.name}</li>))}
+      </ol>)
+  }
+}
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+        <Contacts contacts= {[{name: 'rajan'},{name: 'vivek'},{name: 'samit'}]}/>
+        <Contacts contacts= {[{name: 'rohit'},{name: 'prakash'},{name: 'raghav'}]}/>
+    </div>
+    )
   }
 }
 
