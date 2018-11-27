@@ -1,5 +1,24 @@
 import React, {Component} from "react"
-class ListContacts extends Component {
+//using stateless functional component 
+function ListContacts(props) {
+	return (<ol className="contact-list">
+				{props.contacts.map(contact => (
+					<li key={contact.name} className="contact-list-item">
+						
+						<div className="contact-avatar" style={{
+							backgroundImage:`url(${contact.avatarURL})`
+						}}></div>
+						
+						<div className="contact-details">
+							<p>{contact.name}</p>
+							<p>{contact.email}</p>
+						</div>
+						<button className="contact-remove">Remove</button>
+					</li>))}
+			</ol>)
+}
+//using class component
+/*class ListContacts extends Component {
 	render(){
 		//console.log(this.props);
 		return (<ol className="contact-list">
@@ -18,6 +37,6 @@ class ListContacts extends Component {
 					</li>))}
 			</ol>)
 	}
-}
+}*/
 
 export default ListContacts
