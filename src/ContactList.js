@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 //using stateless functional component 
-function ListContacts(props) {
+/*function ListContacts(props) {
 	return (<ol className="contact-list">
 				{props.contacts.map(contact => (
 					<li key={contact.name} className="contact-list-item">
@@ -16,9 +16,10 @@ function ListContacts(props) {
 						<button className="contact-remove">Remove</button>
 					</li>))}
 			</ol>)
-}
+}*/
 //using class component
-/*class ListContacts extends Component {
+//managing state
+class ListContacts extends Component {
 	render(){
 		//console.log(this.props);
 		return (<ol className="contact-list">
@@ -37,6 +38,6 @@ function ListContacts(props) {
 					</li>))}
 			</ol>)
 	}
-}*/
+}
 
 export default ListContacts
