@@ -22,6 +22,7 @@ import ListContacts from "./ContactList"
 ]*/
 
 class App extends Component {
+  
   state = {
     contacts: [
   {
